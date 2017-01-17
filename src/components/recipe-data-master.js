@@ -1,6 +1,12 @@
 main_dish
 with_rice
 
+class Food {
+  constructor(type,origin){
+    this.type = 
+  }
+}
+
 curry_rice
 dry_curry
 chicken_soboro_donburi
@@ -56,6 +62,3 @@ spagghetti_with_shimeji
 noodles_dish
 
 chicken_ramen
-
-
-zzzzz

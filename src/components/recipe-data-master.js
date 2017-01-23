@@ -3,40 +3,111 @@ with_rice
 
 class Food {
   constructor(type,origin){
-    this.type = 
+    this.type = type;
+    this.origin = origin;
   }
 }
 
-curry_rice
-dry_curry
-chicken_soboro_donburi
-kinoko_gohan
-pork_curry_donburi
-lu_rou_fan
-basil_chicken
-hainan_chicken_rice
-oyakodon
-soboro_don
-omurice
+let curry_rice = new Food(main_dish,Japan){
 
-main_dish
-without_rice
+};
 
-beef_shigureni
-ginger_garlic_baked_salmon
-chicken_teriyaki
-gyoza
-hamburger_steak
-kabocha_pork_stir_fry
-miso_grilled_chicken
-braised_enoki
-braised_eggplant
-nikujaga
-stir_fry_chicken_cabbage
-soondubu_jjigae
-moo_shu_pork
-stir_fry_potato_chicken_curry_leaves
-drunken_chicken
+let dry_curry = new Food(main_dish,Japan){
+
+}
+
+let chicken_soboro_donburi = new Food(don,Japan){
+
+}
+
+let kinoko_gohan = new Food(don,Japan){
+
+}
+
+let pork_curry = new Food(main_dish,Japan){
+
+}
+
+let lu_rou = new Food(main_dish,Taiwan){
+
+}
+
+let basil_chicken = new Food(main_dish,Thailand){
+
+}
+
+let hainan_chicken_rice = new Food(complete,China){
+
+}
+
+let oyakodon = new Food(don,Japan){
+
+}
+
+let soboro_don = new Food(don,Japan){
+
+}
+
+let omurice = new Food(don,Japan){
+
+}
+
+let beef_shigureni = new Food(main_dish,Japan){
+
+}
+
+let ginger_garlic_baked_salmon = new Food(main_dish,Japan){
+
+}
+
+let chicken_teriyaki = new Food(main_dish,Japan){
+
+}
+let gyoza = new Food(main_dish,Japan){
+
+}
+
+let hamburger_steak = new Food(main_dish,Japan){
+
+}
+
+let kabocha_pork_stir_fry = new Food(main_dish,Japan){
+
+}
+
+let miso_grilled_chicken = new Food(main_dish,Japan){
+
+}
+
+let braised_enoki = new Food(side_dish,Japan){
+
+}
+
+let braised_eggplant = new Food(main_dish,Japan){
+
+}
+
+let nikujaga = new Food(nikujaga,Japan){
+
+}
+
+let stir_fry_chicken_cabbage = new Food(main_dish,Japan){
+
+}
+
+let soondubu_jjigae = new Food(main_dish,Japan){
+
+}
+
+let moo_shu_pork = new Food(main_dish,Japan){
+
+}
+
+let stir_fry_potato_chicken_curry_leaves = new Food(main_dish,Original){
+
+}
+
+let drunken_chicken = new Food(main_dish,)
 stir_fry_chicken_scallion
 twice_cooked_pork
 three_cup_chicken

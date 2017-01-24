@@ -1,135 +1,51 @@
-main_dish
-with_rice
+import Component from 'react';
 
-class Food {
-  constructor(type,origin){
-    this.type = type;
-    this.origin = origin;
-  }
+let curry_rice = new Food("Main Dish","Japan")
+let dry_curry = new Food("Main Dish","Japan")
+let chicken_soboro_donburi = new Food("Don","Japan")
+let kinoko_gohan = new Food("Don","Japan")
+let pork_curry = new Food("Main Dish","Japan")
+let lu_rou = new Food("Main Dish","Taiwan")
+let basil_chicken = new Food("Main Dish","Thailand")
+let hainan_chicken_rice = new Food("Main Dish","China")
+let oyakodon = new Food("Don","Japan")
+let soboro_don = new Food("Don","Japan")
+let omurice = new Food("Don","Japan")
+let beef_shigureni = new Food("Main Dish","Japan")
+let ginger_garlic_baked_salmon = new Food("Main Dish","Japan")
+let chicken_teriyaki = new Food("Main Dish","Japan")
+let gyoza = new Food("Main Dish","Japan")
+let hamburger_steak = new Food("Main Dish","Japan")
+let kabocha_pork_stir_fry = new Food("Main Dish","Japan")
+let miso_grilled_chicken = new Food("Main Dish","Japan")
+let braised_enoki = new Food("Side Dish","Japan")
+let braised_eggplant = new Food("Main Dish","Japan")
+let nikujaga = new Food("Main Dish","Japan")
+let stir_fry_chicken_cabbage = new Food("Main Dish","Japan")
+let soondubu_jjigae = new Food("Main Dish","Japan")
+let moo_shu_pork = new Food("Main Dish","Japan")
+let stir_fry_potato_chicken_curry_leaves = new Food("Main Dish","Original")
+let drunken_chicken = new Food("Main Dish","China")
+let stir_fry_chicken_scallion = new Food("Main Dish","Original")
+let twice_cooked_pork = new Food("Main Dish","China")
+let three_cup_chicken = new Food("Main Dish","Taiwan")
+let general_tso_chicken = new Food("Main Dish","Taiwan")
+let thai_red_curry_chicken = new Food("Main Dish","Thailand")
+let chiang_mai_chicken = new Food("Main Dish","Thailand")
+let tom_kah_gai = new Food("Main Dish","Thailand")
+let ginger_pork = new Food("Main Dish","Japan")
+let mapo_tofu = new Food("Main Dish","China")
+let potato_salad = new Food("Main Dish","Japan")
+let pork_shigureni_sesame = new Food("Main Dish","Japan")
+let tofu_hamburger_steak = new Food("Main Dish","Japan")
+let chikuzenni = new Food("Main Dish","Japan")
+let spinach_with_sesame_sauce = new Food("Side Dish","Japan")
+let spagghetti_with_shimeji = new Food("Noodles","Japan")
+let chicken_ramen = new Food("Noodles","Original")
+
+export default class List extends Component {
+  var list = [curry_rice,
+  dry_curry,
+  chicken_soboro_donburi,
+];
 }
-
-let curry_rice = new Food(main_dish,Japan){
-
-};
-
-let dry_curry = new Food(main_dish,Japan){
-
-}
-
-let chicken_soboro_donburi = new Food(don,Japan){
-
-}
-
-let kinoko_gohan = new Food(don,Japan){
-
-}
-
-let pork_curry = new Food(main_dish,Japan){
-
-}
-
-let lu_rou = new Food(main_dish,Taiwan){
-
-}
-
-let basil_chicken = new Food(main_dish,Thailand){
-
-}
-
-let hainan_chicken_rice = new Food(complete,China){
-
-}
-
-let oyakodon = new Food(don,Japan){
-
-}
-
-let soboro_don = new Food(don,Japan){
-
-}
-
-let omurice = new Food(don,Japan){
-
-}
-
-let beef_shigureni = new Food(main_dish,Japan){
-
-}
-
-let ginger_garlic_baked_salmon = new Food(main_dish,Japan){
-
-}
-
-let chicken_teriyaki = new Food(main_dish,Japan){
-
-}
-let gyoza = new Food(main_dish,Japan){
-
-}
-
-let hamburger_steak = new Food(main_dish,Japan){
-
-}
-
-let kabocha_pork_stir_fry = new Food(main_dish,Japan){
-
-}
-
-let miso_grilled_chicken = new Food(main_dish,Japan){
-
-}
-
-let braised_enoki = new Food(side_dish,Japan){
-
-}
-
-let braised_eggplant = new Food(main_dish,Japan){
-
-}
-
-let nikujaga = new Food(nikujaga,Japan){
-
-}
-
-let stir_fry_chicken_cabbage = new Food(main_dish,Japan){
-
-}
-
-let soondubu_jjigae = new Food(main_dish,Japan){
-
-}
-
-let moo_shu_pork = new Food(main_dish,Japan){
-
-}
-
-let stir_fry_potato_chicken_curry_leaves = new Food(main_dish,Original){
-
-}
-
-let drunken_chicken = new Food(main_dish,)
-stir_fry_chicken_scallion
-twice_cooked_pork
-three_cup_chicken
-general_tso_chicken
-thai_red_curry_chicken
-chiang_mai_chicken
-tom_kah_gai
-ginger_pork
-mapo_tofu
-potato_salad
-pork_shigureni_sesame
-tofu_hamburger_steak
-
-vegetable_dish
-
-chikuzenni
-spinach_with_sesame_sauce
-
-spagghetti_dish
-
-spagghetti_with_shimeji
-
-noodles_dish
-
-chicken_ramen

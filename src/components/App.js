@@ -24,16 +24,14 @@ export default class App extends Component {
 
         FoodStore.listFood().then(foodList => {
 
-          const filteredList = foodList.filter((food) => {
-              if (food.getOrigin() === this.state.ingredientFilterText || this.state.ingredientFilterText === '') {
-                  return true;
+            const filteredList = foodList.filter((food) => {
+                if (food.getOrigin() === this.state.ingredientFilterText || this.state.ingredientFilterText === '') {
+                    return true;
 
-              } else {
-                  return false;
-              }
-          });
-
-
+                } else {
+                    return false;
+                }
+            });
 
             const newRandomizedList = this._randomizeList(filteredList);
 
@@ -44,8 +42,12 @@ export default class App extends Component {
     _renderRecipe(food) {
         return (
             <div key={food.getID()}>
+            <div>
                 <span>{food.getType()}</span>
+                </div>
+                <div>
                 <span>{food.getOrigin()}</span>
+                </div>
             </div>
         );
     }
@@ -107,26 +109,42 @@ export default class App extends Component {
                 }
             });
 
-
-
             const randomizedList = this._randomizeList(filteredList);
 
             this.setState({foodList: randomizedList});
         });
     }
 
+
+
     render() {
+
+      var titleStyle = {
+        padding: 10,
+        borderWidth: 1,
+        borderColor: 'red',
+        borderStyle: 'solid',
+        textAlign: 'center',
+        width: 250,
+      };
+
+      var buttonStyle = {
+        margin: 5,
+      }
+
         return (
             <div>
-                <h1>Cincai</h1>
+                <h1 style={titleStyle}>Cincai</h1>
 
-                <input type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)}></input>
+                <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search">
+                </input>
 
-                <button onClick={this._onMinusClick.bind(this)}>&#8722;</button>
-                <span>{this.state.numOfFood}</span>
-                <button onClick={this._onPlusClick.bind(this)}>&#43;</button>
+                <button style={buttonStyle} onClick={this._onMinusClick.bind(this)}>&#8722;</button>
+                <span style={{margin:5}}>{this.state.numOfFood}</span>
+                <button style={buttonStyle} onClick={this._onPlusClick.bind(this)}>&#43;
+                </button>
 
-                <button onClick={this._onRandomizeClick.bind(this)}>
+                <button style={buttonStyle} onClick={this._onRandomizeClick.bind(this)}>
                     Randomize
                 </button>
 

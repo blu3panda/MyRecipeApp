@@ -1,5 +1,5 @@
 export default class {
-  constructor(type,origin) {
+  constructor(name,origin,ingredients,directions) {
     this.name = name;
     this.origin = origin;
     this.ingredients = ingredients;
@@ -18,7 +18,7 @@ export default class {
     return this.ingredients;
   }
 
-  getdirections() {
+  getDirections() {
     return this.directions;
   }
 

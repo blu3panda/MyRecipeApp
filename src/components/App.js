@@ -1,6 +1,35 @@
 import React, {Component} from 'react';
 import FoodStore from './FoodStore.js';
 
+const titleStyle = {
+  padding: 10,
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
+  textAlign: 'center',
+  width: 250
+};
+
+const buttonStyle = {
+  margin: 5
+};
+
+const nameStyle = {
+  margin: 5
+};
+
+const originStyle = {
+  margin: 5
+};
+
+const ingredientsStyle = {
+  margin: 10
+};
+
+const directionsStyle = {
+  margin: 5
+};
+
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -42,14 +71,31 @@ export default class App extends Component {
     _renderRecipe(food) {
         return (
             <div key={food.getID()}>
-            <div>
-                <span>{food.getType()}</span>
-                </div>
                 <div>
-                <span>{food.getOrigin()}</span>
+                    <span style={nameStyle}>{food.getName()}</span>
+                    <span style={originStyle}>{food.getOrigin()}</span>
+                </div>
+                <div style={ingredientsStyle}>
+                    {food.getIngredients().map(this._renderIngredients.bind(this))}
+                </div>
+                <div style={directionsStyle}>
+                    {food.getDirections().map(this._renderDirections.bind(this))}
                 </div>
             </div>
         );
+    }
+
+    _renderIngredients(ingredient) {
+      return (
+
+        <div>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</div>
+      )
+    }
+
+    _renderDirections(direction) {
+      return (
+        <div>{direction}</div>
+      )
     }
 
     _shuffle(array) {
@@ -115,32 +161,18 @@ export default class App extends Component {
         });
     }
 
-
-
     render() {
-
-      var titleStyle = {
-        padding: 10,
-        borderWidth: 1,
-        borderColor: 'red',
-        borderStyle: 'solid',
-        textAlign: 'center',
-        width: 250,
-      };
-
-      var buttonStyle = {
-        margin: 5,
-      }
 
         return (
             <div>
                 <h1 style={titleStyle}>Cincai</h1>
 
-                <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search">
-                </input>
+                <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search"></input>
 
                 <button style={buttonStyle} onClick={this._onMinusClick.bind(this)}>&#8722;</button>
-                <span style={{margin:5}}>{this.state.numOfFood}</span>
+                <span style={{
+                    margin: 5
+                }}>{this.state.numOfFood}</span>
                 <button style={buttonStyle} onClick={this._onPlusClick.bind(this)}>&#43;
                 </button>
 

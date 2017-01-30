@@ -23,6 +23,8 @@ export default class {
   }
 
   getID() {
-    return this.name + this.origin;
+    return this.name + this.origin + this.ingredients + this.directions;
   }
+
+
 }

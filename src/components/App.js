@@ -12,23 +12,40 @@ const titleStyle = {
 
 const buttonStyle = {
   margin: 5
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
 };
 
 const nameStyle = {
   margin: 5
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
 };
 
 const originStyle = {
   margin: 5
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
 };
 
 const ingredientsStyle = {
   margin: 10
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
 };
 
 const directionsStyle = {
   margin: 5
+  borderWidth: 1,
+  borderColor: 'red',
+  borderStyle: 'solid',
 };
+
+const
 
 export default class App extends Component {
     constructor(props) {
@@ -75,10 +92,10 @@ export default class App extends Component {
                     <span style={nameStyle}>{food.getName()}</span>
                     <span style={originStyle}>{food.getOrigin()}</span>
                 </div>
-                <div style={ingredientsStyle}>
+                <div>
                     {food.getIngredients().map(this._renderIngredients.bind(this))}
                 </div>
-                <div style={directionsStyle}>
+                <div>
                     {food.getDirections().map(this._renderDirections.bind(this))}
                 </div>
             </div>
@@ -87,14 +104,13 @@ export default class App extends Component {
 
     _renderIngredients(ingredient) {
       return (
-
-        <div>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</div>
+        <div style={ingredientsStyle}>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</div>
       )
     }
 
     _renderDirections(direction) {
       return (
-        <div>{direction}</div>
+        <div style={directionsStyle}>{direction}</div>
       )
     }
 

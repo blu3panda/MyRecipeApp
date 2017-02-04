@@ -2,50 +2,53 @@ import React, {Component} from 'react';
 import FoodStore from './FoodStore.js';
 
 const titleStyle = {
-  padding: 10,
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
-  textAlign: 'center',
-  width: 250
+    padding: 7,
+    fontFamily: "Arial",
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid',
+    textAlign: 'center',
+    width: 250
 };
 
 const buttonStyle = {
-  margin: 5
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
+    margin: 7,
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid'
 };
 
 const nameStyle = {
-  margin: 5
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
+    margin: 7,
+    fontFamily: "Arial",
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid'
 };
 
 const originStyle = {
-  margin: 5
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
+    margin: 7,
+    fontFamily: "Arial",
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid'
 };
 
 const ingredientsStyle = {
-  margin: 10
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
+    margin: 2,
+    fontFamily: "Arial",
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid'
 };
 
 const directionsStyle = {
-  margin: 5
-  borderWidth: 1,
-  borderColor: 'red',
-  borderStyle: 'solid',
+    margin: 7,
+    fontFamily: "Arial",
+    borderWidth: 1,
+    borderColor: 'red',
+    borderStyle: 'solid'
 };
-
-const
 
 export default class App extends Component {
     constructor(props) {
@@ -55,15 +58,6 @@ export default class App extends Component {
             numOfFood: 0,
             ingredientFilterText: ''
         };
-    }
-
-    componentWillMount() {
-        FoodStore.listFood().then(foodList => {
-
-            const randomizedList = this._randomizeList(foodList);
-
-            this.setState({foodList: randomizedList});
-        });
     }
 
     _onRandomizeClick() {
@@ -85,6 +79,26 @@ export default class App extends Component {
         });
     }
 
+    _onGenerateClick() {
+
+      FoodStore.listFood().then(foodList => {
+
+        const totalIngredients = foodList.ingredients;
+
+        this.setState({foodList: totalIngredients});
+      });
+    }
+
+    _renderTotalIngredients(ingredient) {
+        return (
+          <div>
+              <ul style={ingredientsStyle}>
+                  <li>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</li>
+              </ul>
+          </div>
+        )
+    }
+
     _renderRecipe(food) {
         return (
             <div key={food.getID()}>
@@ -103,15 +117,19 @@ export default class App extends Component {
     }
 
     _renderIngredients(ingredient) {
-      return (
-        <div style={ingredientsStyle}>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</div>
-      )
+        return (
+            <div>
+                <ul style={ingredientsStyle}>
+                    <li>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</li>
+                </ul>
+            </div>
+        )
     }
 
     _renderDirections(direction) {
-      return (
-        <div style={directionsStyle}>{direction}</div>
-      )
+        return (
+            <div style={directionsStyle}>{direction}</div>
+        )
     }
 
     _shuffle(array) {
@@ -187,13 +205,18 @@ export default class App extends Component {
 
                 <button style={buttonStyle} onClick={this._onMinusClick.bind(this)}>&#8722;</button>
                 <span style={{
-                    margin: 5
+                    margin: 5,
+                    fontFamily: "Arial"
                 }}>{this.state.numOfFood}</span>
                 <button style={buttonStyle} onClick={this._onPlusClick.bind(this)}>&#43;
                 </button>
 
                 <button style={buttonStyle} onClick={this._onRandomizeClick.bind(this)}>
                     Randomize
+                </button>
+
+                <button style={buttonStyle} onClick={this._onGenerateClick.bind(this)}>
+                    Generate Ingredients
                 </button>
 
                 <div>{this.state.foodList.map(this._renderRecipe.bind(this))}</div>

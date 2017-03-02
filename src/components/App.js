@@ -60,6 +60,15 @@ export default class App extends Component {
         };
     }
 
+    componentWillMount() {
+        FoodStore.listFood().then(foodList => {
+
+            const randomizedList = this._randomizeList(foodList);
+
+            this.setState({foodList: randomizedList});
+        });
+    }
+
     _onRandomizeClick() {
 
         FoodStore.listFood().then(foodList => {
@@ -81,21 +90,21 @@ export default class App extends Component {
 
     _onGenerateClick() {
 
-      FoodStore.listFood().then(foodList => {
+        FoodStore.listFood().then(foodList => {
 
-        const totalIngredients = foodList.ingredients;
+            const totalIngredients = foodList.ingredients;
 
-        this.setState({foodList: totalIngredients});
-      });
+            this.setState({foodList: totalIngredients});
+        });
     }
 
-    _renderTotalIngredients(ingredient) {
+    _renderTotalIngredients(food) {
         return (
-          <div>
-              <ul style={ingredientsStyle}>
-                  <li>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</li>
-              </ul>
-          </div>
+            <div key={food.getID()}>
+                <ul style={ingredientsStyle}>
+                    <li>{food.ingredients.quantity + " " + food.ingredients.unit + " " + food.ingredients.name}</li>
+                </ul>
+            </div>
         )
     }
 
@@ -118,7 +127,7 @@ export default class App extends Component {
 
     _renderIngredients(ingredient) {
         return (
-            <div>
+            <div key={ingredient.name}>
                 <ul style={ingredientsStyle}>
                     <li>{ingredient.quantity + " " + ingredient.unit + " " + ingredient.name}</li>
                 </ul>
@@ -199,9 +208,9 @@ export default class App extends Component {
 
         return (
             <div>
-                <h1 style={titleStyle}>Cincai</h1>
+                <h1 style={titleStyle}>MyRecipeApp</h1>
 
-                <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search"></input>
+                <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search Country e.g China"></input>
 
                 <button style={buttonStyle} onClick={this._onMinusClick.bind(this)}>&#8722;</button>
                 <span style={{

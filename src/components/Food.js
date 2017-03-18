@@ -1,13 +1,19 @@
 export default class {
-  constructor(name,origin,ingredients,directions) {
+  constructor(name,altname,origin,ingredients,directions,shortdirections) {
     this.name = name;
+    this.altname = altname;
     this.origin = origin;
     this.ingredients = ingredients;
     this.directions = directions;
+    this.shortdirections = shortdirections;
   }
 
   getName() {
     return this.name;
+  }
+
+  getAltName() {
+    return this.altname;
   }
 
   getOrigin() {
@@ -20,6 +26,10 @@ export default class {
 
   getDirections() {
     return this.directions;
+  }
+
+  getShortDirections() {
+    return this.shortdirections;
   }
 
   getID() {

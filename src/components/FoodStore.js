@@ -4,8 +4,9 @@ export default {
   async listFood() {
     return [
       new Food(
-        "Twice-cook Pork",
-        "China",
+        "twice-cook pork",
+        "",
+        "china",
         [
           {
             name: "pork belly",
@@ -22,19 +23,19 @@ export default {
           {
             name: "cooking oil",
             quantity: 2,
-            unit: "tablespoon"
+            unit: "tablespoons"
           },
 
           {
             name: "chili bean paste",
             quantity: 2,
-            unit: "tablespoon"
+            unit: "tablespoons"
           },
 
           {
             name: "sweet bean paste",
             quantity: 2,
-            unit: "teaspoon"
+            unit: "teaspoons"
           },
 
           {
@@ -52,7 +53,7 @@ export default {
           {
             name: "sugar",
             quantity: 2,
-            unit: "teaspoon"
+            unit: "teaspoons"
           },
         ],
 
@@ -62,16 +63,23 @@ export default {
           "3. Add the leeks or ramps and stir-fry until they are just cooked, about 30 seconds. Serve immediately."
         ],
 
+        [
+          "1. Boil pork belly until cooked through and slice it thinly.",
+          "2. Stir fry pork slices in oil then add chili bean paste, sweet bean paste and black beans.",
+          "3. Mix all other ingredients and stir fry until done."
+        ],
+
     ),
 
       new Food(
-        "Three Cup Chicken (San Bei Ji)",
-        "Taiwan",
+        "three cup chicken",
+        "san bei ji",
+        "taiwan",
         [
           {
             name: "sesame oil",
             quantity: 0.25,
-            unit: "cup"
+            unit: "cups"
           },
 
           {
@@ -101,13 +109,13 @@ export default {
           {
             name: "rice wine",
             quantity: 0.5,
-            unit: "cup"
+            unit: "cups"
           },
 
           {
             name: "soy sauce",
             quantity: 0.25,
-            unit: "cup"
+            unit: "cups"
           },
 
           {
@@ -127,6 +135,10 @@ export default {
           "1. Heat sesame oil in a large skillet or wok over medium-high heat until simmering. Add ginger, garlic, and chilis and cook until very fragrant, about 1 minute.",
           "2. Add chicken pieces to the skillet in a single layer and cook, tilting the pan if ncessary to submerge all pieces in the oil, for 1 minute. Flip chicken pieces and cook for 1 minute longer.",
           "3. Add rice wine, soy sauce, and sugar and bring to a boil, stirring to dissolve the sugar. Reduce heat to a simmer. Partially cover the skillet to prevent splashes of oil and cook, turning the chicken pieces every few minutes, until the chicken is cooked through, about 15 minutes. Stir in Thai basil and remove from heat."
+        ],
+
+        [
+          "1. "
         ]
       ),
 

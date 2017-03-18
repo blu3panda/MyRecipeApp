@@ -14,40 +14,40 @@ const titleStyle = {
 const buttonStyle = {
     margin: 7,
     borderWidth: 1,
-    borderColor: 'red',
-    borderStyle: 'solid'
+    //borderColor: 'red',
+    //borderStyle: 'solid'
 };
 
 const nameStyle = {
     margin: 7,
     fontFamily: "Arial",
     borderWidth: 1,
-    borderColor: 'red',
-    borderStyle: 'solid'
+    //borderColor: 'red',
+    //borderStyle: 'solid'
 };
 
 const originStyle = {
     margin: 7,
     fontFamily: "Arial",
     borderWidth: 1,
-    borderColor: 'red',
-    borderStyle: 'solid'
+    //borderColor: 'red',
+    //borderStyle: 'solid'
 };
 
 const ingredientsStyle = {
     margin: 2,
     fontFamily: "Arial",
     borderWidth: 1,
-    borderColor: 'red',
-    borderStyle: 'solid'
+    //borderColor: 'red',
+    //borderStyle: 'solid'
 };
 
 const directionsStyle = {
     margin: 7,
     fontFamily: "Arial",
     borderWidth: 1,
-    borderColor: 'red',
-    borderStyle: 'solid'
+    //borderColor: 'red',
+    //borderStyle: 'solid'
 };
 
 export default class App extends Component {
@@ -60,14 +60,14 @@ export default class App extends Component {
         };
     }
 
-    componentWillMount() {
+    /*componentWillMount() {
         FoodStore.listFood().then(foodList => {
 
             const randomizedList = this._randomizeList(foodList);
 
             this.setState({foodList: randomizedList});
         });
-    }
+    }*/
 
     _onRandomizeClick() {
 
@@ -208,7 +208,8 @@ export default class App extends Component {
 
         return (
             <div>
-                <h1 style={titleStyle}>MyRecipeApp</h1>
+
+                <div style={titleStyle}>My Recipe App</div>
 
                 <input style={buttonStyle} type="text" value={this.state.ingredientFilterText} onChange={this._onChange.bind(this)} placeholder="Search Country e.g China"></input>
 
